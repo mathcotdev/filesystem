@@ -23,7 +23,7 @@ app.get("/file", (req,res)=>{
         if(errer)
         {
             const message = "Nous n'avons pas pu créer le dossier"
-            res.status(500).json(message, errer)
+            res.status(500).json({errer,message})
         }
         else
         {
@@ -31,12 +31,12 @@ app.get("/file", (req,res)=>{
                 if(error)
                 {
                     const message = "Nous n'avons pas pu créer le fichier"
-                    res.status(500).json(message, errer)
+                    res.status(500).json({message,errer})
                 }
                 else
                 {
                     const message = "Fichier créér avec succées"
-                    res.status(500).json(message)
+                    res.status(500).json({errer,message})
                 }
             })
         }
