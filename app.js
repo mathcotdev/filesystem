@@ -23,7 +23,7 @@ app.get("/file", (req,res)=>{
         if(error)
         {
             const message = "Nous n'avons pas pu créer le dossier"
-            res.status(500).json(message)
+            res.status(500).json(message, error)
         }
         else
         {
@@ -31,7 +31,7 @@ app.get("/file", (req,res)=>{
                 if(error)
                 {
                     const message = "Nous n'avons pas pu créer le fichier"
-                    res.status(500).json(message)
+                    res.status(500).json(message, error)
                 }
                 else
                 {
