@@ -19,19 +19,19 @@ app.get("/", (req,res)=>{
 app.get("/file", (req,res)=>{
     const nom = req.body.name
     const contenue = req.body.contenue
-    fs.mkdir(`${os.homedir}/OLDAPP`, (error)=>{
-        if(error)
+    fs.mkdir(`${os.homedir}/OLDAPP`, (errer)=>{
+        if(errer)
         {
             const message = "Nous n'avons pas pu créer le dossier"
-            res.status(500).json(message, error)
+            res.status(500).json(message, errer)
         }
         else
         {
-            fs.writeFile(`${os.homedir}/OLDAPP/${nom}.txt`, contenue,(error)=>{
+            fs.writeFile(`${os.homedir}/OLDAPP/${nom}.txt`, contenue,(errer)=>{
                 if(error)
                 {
                     const message = "Nous n'avons pas pu créer le fichier"
-                    res.status(500).json(message, error)
+                    res.status(500).json(message, errer)
                 }
                 else
                 {
