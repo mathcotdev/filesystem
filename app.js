@@ -4,9 +4,10 @@ const fs = require("fs")
 const os = require("os")
 const path = require("path")
 require("dotenv").config()
+const cors = require("cors")
 const body_parser = require("body-parser")
 
-
+app.use(cors())
 app.use(body_parser.json())
 app.listen(process.env.PORT || 2000, ()=>{
     console.log("http://localhost:"+2000)
@@ -26,7 +27,7 @@ app.get("/file", (req,res)=>{
         }
         else
         {
-            fs.writeFile(`${os.homedir}/OLDAPP/${nom}`, contenue,(error)=>{
+            fs.writeFile(`${os.homedir}/OLDAPP/${nom}.txt`, contenue,(error)=>{
                 if(error)
                 {
                     const message = "Nous n'avons pas pu créer le fichier"
