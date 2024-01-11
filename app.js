@@ -27,7 +27,7 @@ app.get("/file", (req,res)=>{
         }
         else
         {
-            fs.writeFile(`./FICHIER/${nom}.txt`, contenue,(errer)=>{
+            fs.writeFile(`FICHIER/${nom}.txt`, contenue,(errer)=>{
                 if(error)
                 {
                     const message = "Nous n'avons pas pu créer le fichier"
