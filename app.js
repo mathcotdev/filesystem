@@ -19,7 +19,7 @@ app.get("/", (req,res)=>{
 app.get("/file", (req,res)=>{
     const nom = "ALFRED"
     const contenue = "FRED NEY ALFRED"
-    fs.mkdir(`./FICHIER`, (errer)=>{
+    fs.mkdir(`FICHIER`, (errer)=>{
         if(errer)
         {
             const message = "Nous n'avons pas pu créer le dossier"
